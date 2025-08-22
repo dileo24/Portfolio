@@ -3,7 +3,7 @@ import { myProjects } from "../constants";
 const Projects = () => {
 	return (
 		<section className="relative c-space section-spacing">
-			<h2 className="text-heading pt-10">Mis proyectos</h2>
+			<h2 className="text-heading pt-20">Mis proyectos</h2>
 			<div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
 			{myProjects.map((project) => (
 				<Project key={project.id} {...project} />
