@@ -5,7 +5,7 @@ const Footer = () => {
 			<div className="mb-4 bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
 			<div className="flex gap-3 mb-5">
 				{mySocials.map((social, index) => (
-					<a href={social.href} key={index}>
+					<a href={social.href} key={index} target="_blank">
 						<img
 							src={social.icon}
 							className="w-6 h-6"
