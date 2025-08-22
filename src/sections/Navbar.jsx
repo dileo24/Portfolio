@@ -6,8 +6,8 @@ const Navbar = () => {
 	const navItems = [
 		{ id: "home", label: "Home" },
 		{ id: "about", label: "Sobre mi" },
-		{ id: "projects", label: "Proyectos" },
 		{ id: "experiences", label: "Experiencia" },
+		{ id: "projects", label: "Proyectos" },
 		{ id: "contact", label: "Contacto" },
 	];
 
