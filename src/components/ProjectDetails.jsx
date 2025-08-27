@@ -12,10 +12,8 @@ const ProjectDetails = ({ title, description, subDescription, image, tags, href,
 	};
 
 	useEffect(() => {
-		// Agregar event listener cuando el componente se monta
 		document.addEventListener("mousedown", handleClickOutside);
 
-		// Limpiar event listener cuando el componente se desmonta
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
@@ -24,8 +22,8 @@ const ProjectDetails = ({ title, description, subDescription, image, tags, href,
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm">
 			<motion.div
-				ref={modalRef} // Referencia para detectar clics externos
-				className="relative max-w-2xl border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
+				ref={modalRef}
+				className="relative max-w-4xl border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
 				initial={{ opacity: 0, scale: 0.5 }}
 				animate={{ opacity: 1, scale: 1 }}
 			>
