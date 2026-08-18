@@ -61,6 +61,10 @@ export const Particles = ({
 	const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
 	const rafID = useRef(null);
 	const resizeTimeout = useRef(null);
+	const effectiveQuantity =
+		typeof window !== "undefined" && (window.innerWidth < 768 || window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+			? Math.min(quantity, 35)
+			: quantity;
 
 	useEffect(() => {
 		if (canvasRef.current) {
@@ -131,7 +135,7 @@ export const Particles = ({
 
 			// Clear existing particles and create new ones with exact quantity
 			circles.current = [];
-			for (let i = 0; i < quantity; i++) {
+			for (let i = 0; i < effectiveQuantity; i++) {
 				const circle = circleParams();
 				drawCircle(circle);
 			}
@@ -189,7 +193,7 @@ export const Particles = ({
 
 	const drawParticles = () => {
 		clearContext();
-		const particleCount = quantity;
+		const particleCount = effectiveQuantity;
 		for (let i = 0; i < particleCount; i++) {
 			const circle = circleParams();
 			drawCircle(circle);

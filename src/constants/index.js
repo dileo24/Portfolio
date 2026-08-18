@@ -1,124 +1,64 @@
 export const myProjects = [
 	{
 		id: 1,
-		title: "SportQuatro",
-		description: "",
-		subDescription: [
-			"Frontend responsive desarrollado con React y Material-UI.",
-			"Backend robusto con Node.js y Express, conectado a una base de datos PostgreSQL mediante Sequelize ORM.",
-			"Filtrado por distintos campos, formularios de contacto y financiación con validaciones.",
-			"Panel para gestión de inventario con carga de imágenes y detalles.",
-		],
-		href: "https://sportquatro.com/",
+		title: "Boscatto Estudio",
+		description: "Sistema de reservas online para una peluquería/barbería, con panel de administración completo para gestionar el negocio día a día.",
+		subDescription: {
+			client: [
+				"Reserva de turno online elegido por servicio, peluquero, fecha y horario disponible.",
+				"Autogestión del turno vía link enviado por mail: el cliente puede reprogramarlo o cancelarlo sin necesidad de crear una cuenta.",
+				"Catálogo de servicios con fotos y videos, precios y beneficios incluidos.",
+				"Reseñas de Google integradas a la web y sección de contacto con mapa, WhatsApp y redes sociales.",
+			],
+			admin: [
+				"Cuentas de staff con permisos granulares por sección (turnos, peluqueros, servicios, reseñas, bloqueos, usuarios) y un rol superadmin.",
+				"Calendario completo de turnos: alta manual, reprogramación y seguimiento de 5 estados (confirmado, asistió, no asistió, cancelado por cliente/por el local).",
+				"Gestión del equipo de peluqueros con foto de perfil y horario semanal validado (sin superposición de rangos).",
+				"Catálogo de servicios con galería de fotos y video que se optimiza automáticamente al subirse.",
+				"Bloqueos de agenda para vacaciones o feriados: cancela en cascada los turnos afectados y notifica por mail a cada cliente con un link para reprogramar.",
+				"Moderación de reseñas (ocultar las de Google, cargar y editar las manuales) y configuración de los datos del negocio para la web pública.",
+			],
+		},
+		href: "https://boscatto.com.ar/",
 		logo: "",
-		image: "/assets/projects/sportquatro.jpg",
+		image: "/assets/projects/boscatto.jpg",
 		tags: [
-			{
-				id: 1,
-				name: "React",
-				path: "/assets/logos/react.svg",
-			},
-			{
-				id: 2,
-				name: "Material UI",
-				path: "/assets/logos/mui.svg",
-			},
-			{
-				id: 3,
-				name: "Node",
-				path: "/assets/logos/node.svg",
-			},
-			{
-				id: 4,
-				name: "Express",
-				path: "/assets/logos/express.svg",
-			},
-			{
-				id: 5,
-				name: "Sequelize",
-				path: "/assets/logos/sequelize.svg",
-			},
-			{
-				id: 6,
-				name: "PostgreSQL",
-				path: "/assets/logos/postgresql.svg",
-			},
+			{ id: 1, name: "Angular", path: "/assets/logos/angular.svg" },
+			{ id: 2, name: "TypeScript", path: "/assets/logos/typescript.svg" },
+			{ id: 3, name: "NestJS", path: "/assets/logos/nestjs.svg" },
+			{ id: 4, name: "Prisma", path: "/assets/logos/prisma.svg" },
+			{ id: 5, name: "MySQL", path: "/assets/logos/mysql.svg" },
 		],
 	},
 	{
 		id: 2,
-		title: "GoPage",
-		description: "",
-		subDescription: [
-			"Maquetación responsive con React y SASS/SCSS.",
-			"Implementación de secciones modulares: servicios, planes, Q&A, etc.",
-			"Sistema de preguntas frecuentes con acordeones interactivos.",
-		],
-		href: "https://gopage.vercel.app/",
+		title: "SportQuatro",
+		description: "Concesionaria de autos con catálogo público y un CRM interno para el equipo de ventas: pipeline de consultas, stock, ventas y chat de WhatsApp en tiempo real.",
+		subDescription: {
+			client: [
+				"Catálogo de vehículos con filtros por marca, año, precio, kilometraje y categoría.",
+				"Simulador de financiación, ficha de detalle por vehículo y formulario para tasar/vender el auto propio.",
+				"Consulta directa por WhatsApp, atendida por un bot asistido por IA que deriva al equipo de ventas cuando corresponde.",
+			],
+			admin: [
+				"CRM con pipeline de consultas en formato Kanban (nuevo, con oferta, seguimiento, cerrado, perdido) con reordenamiento por drag & drop, y visibilidad de datos según el rol (admin, supervisor, vendedor).",
+				"Dashboard con métricas del negocio: consultas del mes, origen de las consultas, tiempo promedio de cierre y evolución semanal/mensual de consultas y ventas.",
+				"Gestión de stock de vehículos con checklist de alistaje por unidad y reordenamiento de fotos.",
+				"Registro de ventas por mes, con búsqueda y permisos distintos para vendedores, supervisores y administradores.",
+				"Bandeja de conversaciones de WhatsApp en tiempo real (Socket.io), compartida por el equipo, con mensajes predefinidos y sincronizada con el bot de IA que también procesa comandos de voz.",
+				"Gestor de tareas y recordatorios, administración de cuentas del equipo, y tareas automáticas: recordatorios de seguimiento, backup semanal por mail y limpieza de conversaciones inactivas.",
+			],
+		},
+		href: "https://sportquatro.com/",
 		logo: "",
-		image: "/assets/projects/goPage.jpg",
+		image: "/assets/projects/sportquatro.jpg",
 		tags: [
-			{
-				id: 1,
-				name: "React",
-				path: "/assets/logos/react.svg",
-			},
-			{
-				id: 2,
-				name: "SASS/SCSS",
-				path: "/assets/logos/sass.svg",
-			},
-		],
-	},
-	{
-		id: 3,
-		title: "QuickBites",
-		description:
-			"Carta/Menú estilo ecommerce con estética mobile. Pensada para restaurantes que quieran facilitar los pedidos de comensales presencialmente.",
-		subDescription: [
-			"Diseño mobile para comensales y desktop para administradores del restaurante.",
-			"Sistema de usuarios, pedidos y cambios de estado en tiempo real son Socket.io.",
-			"Panel para gestión de productos.",
-		],
-		href: "https://drive.google.com/file/d/1xUDvR8zUedQkcGDA92OiHaVwqCYUlrUi/view?usp=sharing",
-		logo: "",
-		image: "/assets/projects/quickbites.jpg",
-		tags: [
-			{
-				id: 1,
-				name: "React",
-				path: "/assets/logos/react.svg",
-			},
-			{
-				id: 2,
-				name: "Redux",
-				path: "/assets/logos/redux.svg",
-			},
-			{
-				id: 3,
-				name: "SASS/SCSS",
-				path: "/assets/logos/sass.svg",
-			},
-			{
-				id: 4,
-				name: "Node",
-				path: "/assets/logos/node.svg",
-			},
-			{
-				id: 5,
-				name: "Express",
-				path: "/assets/logos/express.svg",
-			},
-			{
-				id: 6,
-				name: "Sequelize",
-				path: "/assets/logos/sequelize.svg",
-			},
-			{
-				id: 7,
-				name: "PostgreSQL",
-				path: "/assets/logos/postgresql.svg",
-			},
+			{ id: 1, name: "React", path: "/assets/logos/react.svg" },
+			{ id: 2, name: "Material UI", path: "/assets/logos/mui.svg" },
+			{ id: 3, name: "Node", path: "/assets/logos/node.svg" },
+			{ id: 4, name: "Express", path: "/assets/logos/express.svg" },
+			{ id: 5, name: "Socket.io", path: "/assets/logos/socketio.svg" },
+			{ id: 6, name: "MySQL", path: "/assets/logos/mysql.svg" },
 		],
 	},
 ];
@@ -155,7 +95,7 @@ export const experiences = [
 	{
 		title: "Tutor desarrollo full stack",
 		job: "Desafío Latam Bootcamp",
-		date: "2024 - Actualidad",
+		date: "2024 - 2025",
 		contents: [
 			"Guiar estudiantes a través del programa de estudio que incluye CSS, HTML, JavaScript, React, Bootstrap, Git, Node.js, PostgreSQL, Sequelize, GitHub, Express.js.",
 			"Instruir con distintas prácticas, actividades y proyectos para perfeccionar sus habilidades con dicho stack.",

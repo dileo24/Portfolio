@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import ProjectDetails from "./ProjectDetails";
+import React, { Suspense, lazy, useState } from "react";
+
+const ProjectDetails = lazy(() => import("./ProjectDetails"));
 
 const Project = ({ title, description, subDescription, href, image, tags }) => {
 	const [isHidden, setIsHidden] = useState(false);
@@ -23,15 +24,17 @@ const Project = ({ title, description, subDescription, href, image, tags }) => {
 			</div>
 			<div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
 			{isHidden && (
-				<ProjectDetails
-					title={title}
-					description={description}
-					subDescription={subDescription}
-					image={image}
-					tags={tags}
-					href={href}
-					closeModal={() => setIsHidden(false)}
-				/>
+				<Suspense fallback={null}>
+					<ProjectDetails
+						title={title}
+						description={description}
+						subDescription={subDescription}
+						image={image}
+						tags={tags}
+						href={href}
+						closeModal={() => setIsHidden(false)}
+					/>
+				</Suspense>
 			)}
 		</>
 	);
