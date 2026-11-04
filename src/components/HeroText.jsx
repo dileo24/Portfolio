@@ -2,7 +2,7 @@ import { FlipWords } from "./FlipWords";
 import { motion } from "motion/react";
 
 const HeroText = () => {
-	const words = ["Software Developer", "Project Leader"];
+	const words = ["Project Manager", "Project Leader", "Software Developer"];
 
 	const variants = {
 		hidden: { opacity: 0, x: -50 },

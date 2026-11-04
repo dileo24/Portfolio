@@ -2,7 +2,7 @@ import React, { Suspense, lazy, useState } from "react";
 
 const ProjectDetails = lazy(() => import("./ProjectDetails"));
 
-const Project = ({ title, description, sections, href, image, tags, status }) => {
+const Project = ({ title, description, sections, href, pdf, image, tags, status }) => {
 	const [isHidden, setIsHidden] = useState(false);
 	return (
 		<>
@@ -36,6 +36,7 @@ const Project = ({ title, description, sections, href, image, tags, status }) =>
 						image={image}
 						tags={tags}
 						href={href}
+						pdf={pdf}
 						closeModal={() => setIsHidden(false)}
 					/>
 				</Suspense>

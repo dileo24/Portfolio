@@ -1,24 +1,51 @@
+import { motion } from "motion/react";
 import { Frameworks } from "../components/Frameworks";
+import { KanbanBoard } from "../components/KanbanBoard";
+import { Counter } from "../components/Counter";
+
+const reveal = {
+	hidden: { opacity: 0, y: 40 },
+	visible: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.6, delay: i * 0.12, ease: "easeOut" } }),
+};
+
+const stats = [
+	{ value: 3, prefix: "+", label: "años en la Universidad Católica de Córdoba" },
+	{ value: 3, label: "proyectos que lidero en la UCC" },
+	{ value: 4, label: "productos freelance en producción" },
+	{ value: 5, label: "proyectos freelance de punta a punta" },
+];
+
+const Card = ({ i, className, children }) => (
+	<motion.div variants={reveal} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} className={className}>
+		{children}
+	</motion.div>
+);
 
 const About = () => {
 	return (
 		<section className="c-space section-spacing" style={{ minHeight: "unset" }}>
 			<h2 className="text-heading pt-20">Sobre mi</h2>
 			<div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
-				<div className="flex items-end grid-default-color grid-prim no-hover">
-					<img
+				<Card i={0} className="flex items-end grid-default-color grid-prim no-hover">
+					<motion.img
 						src="assets/coding-pov.webp"
+						alt=""
+						animate={{ y: [0, -14, 0], rotate: [0, 1.5, 0] }}
+						transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
 						className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
 					/>
+					<div className="absolute rounded-full -top-20 -left-20 size-72 bg-lavender/20 blur-3xl animate-pulse" />
 					<div className="z-10">
+						<p className="mb-2 text-xs font-bold tracking-widest uppercase text-sand">Project Manager · Project Leader · Developer</p>
 						<p className="subtext">
-							Como project leader y desarrollador de software trabajo en aplicaciones web y APIs, planeándolas desde cero y/o garantizando
-							un mantenimiento eficiente.
+							Planifico, coordino equipos y desarrollo aplicaciones web y APIs: desde el relevamiento y el roadmap hasta que el producto está en
+							producción y se mantiene de forma eficiente.
 						</p>
 					</div>
 					<div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
-				</div>
-				<div className="grid-default-color grid-sec no-hover">
+				</Card>
+
+				<Card i={1} className="grid-default-color grid-sec no-hover">
 					<div className="z-10 w-[50%]">
 						<p className="subtext">
 							Entre habilidades técnicas y gestión de equipos, siempre me enfoco en crear soluciones prácticas, mantenibles y que realmente
@@ -28,25 +55,29 @@ const About = () => {
 					<div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
 						<Frameworks />
 					</div>
-				</div>
-				<div className="grid-default-color grid-sec no-hover">
-					<div className="z-10 w-full md:w-2/3">
-						<p className="subtext font-semibold">
-							Mi metodología se basa en el desarrollo iterativo, comuncación constante con el área de testing y feedback recurrente con mi
-							equipo, asegurando que cada aporte posea un valor tangible al producto final.
-						</p>
-					</div>
-					<div className="absolute bottom-0 right-0 w-full h-3/5 md:h-4/5 flex items-end justify-end">
-						<img
-							src="assets/compu2.webp"
-							className="object-contain h-full w-auto max-w-full md:max-w-[80%] lg:max-w-[75%] transform scale-x-[-1]"
-							style={{
-								filter: "drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.3))",
-							}}
-						/>
-					</div>
-				</div>
+				</Card>
+
+				<Card i={2} className="relative flex flex-col justify-between gap-4 overflow-hidden grid-default-color md:col-span-3 no-hover">
+					<p className="z-10 font-semibold subtext">
+						Trabajo con <span className="text-white">Scrum</span> y <span className="text-white">Kanban</span>: iteraciones cortas, comunicación
+						constante con testing y feedback recurrente con el equipo, para que cada entrega sume valor real al producto.
+					</p>
+					<KanbanBoard />
+				</Card>
+
 			</div>
+			<Card i={3} className="mt-4 grid-default-color no-hover">
+				<div className="grid grid-cols-2 gap-6 py-2 md:grid-cols-4">
+						{stats.map((s) => (
+							<div key={s.label} className="flex flex-col justify-center">
+								<span className="text-5xl font-bold text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-lavender to-sand">
+									<Counter value={s.value} prefix={s.prefix} />
+								</span>
+								<span className="mt-1 text-sm text-neutral-400">{s.label}</span>
+							</div>
+						))}
+				</div>
+			</Card>
 		</section>
 	);
 };

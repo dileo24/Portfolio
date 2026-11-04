@@ -44,8 +44,26 @@ export const Timeline = ({ data }) => {
 								<h3>{item.date}</h3>
 								<h3>{item.job}</h3>
 							</div>
+							{item.roles && (
+								<div className="mb-4 space-y-6">
+									{item.roles.map((role) => (
+										<div key={role.title} className="relative pl-5 border-l border-lavender/40">
+											<span className="absolute -left-[5px] top-2 size-[9px] rounded-full bg-lavender" />
+											<div className="flex flex-col mb-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+												<h4 className="text-lg font-semibold text-neutral-200">{role.title}</h4>
+												<span className="text-sm whitespace-nowrap text-sand">{role.date}</span>
+											</div>
+											{role.contents.map((content, index) => (
+												<p className="mb-2 font-normal text-neutral-400" key={index}>
+													{content}
+												</p>
+											))}
+										</div>
+									))}
+								</div>
+							)}
 							{item.contents.map((content, index) => (
-								<p className="mb-3 font-normal text-neutral-400" key={index}>
+								<p className={`mb-3 font-normal text-neutral-400 ${item.roles ? "text-sm italic" : ""}`} key={index}>
 									{content}
 								</p>
 							))}
