@@ -25,39 +25,22 @@ const About = () => {
 	return (
 		<section className="c-space section-spacing" style={{ minHeight: "unset" }}>
 			<h2 className="text-heading pt-20">Sobre mi</h2>
-			<div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
-				<Card i={0} className="flex items-end grid-default-color grid-prim no-hover">
-					<motion.img
-						src="assets/coding-pov.webp"
-						alt=""
-						animate={{ y: [0, -14, 0], rotate: [0, 1.5, 0] }}
-						transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-						className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
-					/>
-					<div className="absolute rounded-full -top-20 -left-20 size-72 bg-lavender/20 blur-3xl animate-pulse" />
-					<div className="z-10">
-						<p className="mb-2 text-xs font-bold tracking-widest uppercase text-sand">Project Manager · Project Leader · Developer</p>
+			<div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[20rem] mt-12">
+				<Card i={0} className="relative overflow-hidden grid-default-color md:col-span-3 min-h-[22rem] md:min-h-0 no-hover">
+					<div className="absolute rounded-full pointer-events-none -top-20 -left-20 size-72 bg-lavender/20 blur-3xl animate-pulse" />
+					<div className="relative z-10 w-[62%] md:w-[55%]">
+						<p className="mb-2 text-xs font-bold tracking-widest uppercase text-sand">PM · Project Leader · Developer</p>
 						<p className="subtext">
-							Planifico, coordino equipos y desarrollo aplicaciones web y APIs: desde el relevamiento y el roadmap hasta que el producto está en
-							producción y se mantiene de forma eficiente.
+							Planifico, coordino equipos y desarrollo aplicaciones web y APIs, desde el roadmap hasta producción, enfocado en soluciones
+							prácticas, mantenibles y que realmente cumplan con las necesidades del usuario.
 						</p>
 					</div>
-					<div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
-				</Card>
-
-				<Card i={1} className="grid-default-color grid-sec no-hover">
-					<div className="z-10 w-[50%]">
-						<p className="subtext">
-							Entre habilidades técnicas y gestión de equipos, siempre me enfoco en crear soluciones prácticas, mantenibles y que realmente
-							cumplan con las necesidades del usuario.
-						</p>
-					</div>
-					<div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+					<div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125 opacity-35 md:opacity-100">
 						<Frameworks />
 					</div>
 				</Card>
 
-				<Card i={2} className="relative flex flex-col justify-between gap-4 overflow-hidden grid-default-color md:col-span-3 no-hover">
+				<Card i={1} className="relative flex flex-col justify-between gap-4 overflow-hidden grid-default-color md:col-span-3 no-hover">
 					<p className="z-10 font-semibold subtext">
 						Trabajo con <span className="text-white">Scrum</span> y <span className="text-white">Kanban</span>: iteraciones cortas, comunicación
 						constante con testing y feedback recurrente con el equipo, para que cada entrega sume valor real al producto.
@@ -66,7 +49,7 @@ const About = () => {
 				</Card>
 
 			</div>
-			<Card i={3} className="mt-4 grid-default-color no-hover">
+			<Card i={2} className="mt-4 grid-default-color no-hover">
 				<div className="grid grid-cols-2 gap-6 py-2 md:grid-cols-4">
 						{stats.map((s) => (
 							<div key={s.label} className="flex flex-col justify-center">
