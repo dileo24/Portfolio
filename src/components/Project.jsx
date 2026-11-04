@@ -2,13 +2,16 @@ import React, { Suspense, lazy, useState } from "react";
 
 const ProjectDetails = lazy(() => import("./ProjectDetails"));
 
-const Project = ({ title, description, subDescription, href, image, tags }) => {
+const Project = ({ title, description, sections, href, image, tags, status }) => {
 	const [isHidden, setIsHidden] = useState(false);
 	return (
 		<>
 			<div className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0">
 				<div>
-					<p className="text-2xl">{title}</p>
+					<p className="text-2xl">
+						{title}
+						{status && <span className="ml-3 text-xs font-bold tracking-wider uppercase align-middle text-sand">{status}</span>}
+					</p>
 					<div className="flex flex-wrap gap-2 mt-2 text-sand max-w-full overflow-hidden">
 						{tags.map((tag) => (
 							<span key={tag.id} className="px-2 py-1">
@@ -28,7 +31,8 @@ const Project = ({ title, description, subDescription, href, image, tags }) => {
 					<ProjectDetails
 						title={title}
 						description={description}
-						subDescription={subDescription}
+						sections={sections}
+						status={status}
 						image={image}
 						tags={tags}
 						href={href}

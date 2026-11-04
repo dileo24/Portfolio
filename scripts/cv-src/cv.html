@@ -18,9 +18,9 @@
 	body {
 		font-family: Arial, Helvetica, sans-serif;
 		color: #111111;
-		font-size: 10.1pt;
-		line-height: 1.38;
-		padding: 24px 46px 24px;
+		font-size: 9.9pt;
+		line-height: 1.33;
+		padding: 22px 46px 18px;
 	}
 	h1 {
 		text-align: center;
@@ -91,6 +91,20 @@
 	li {
 		margin-bottom: 2px;
 	}
+	.role {
+		margin-top: 4px;
+		padding-left: 10px;
+		border-left: 2px solid #bbbbbb;
+	}
+	.role-head {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 700;
+		font-style: italic;
+	}
+	.role ul {
+		margin-top: 2px;
+	}
 	.stack li strong {
 		font-weight: 700;
 	}
@@ -126,9 +140,10 @@
 		<h2>PERFIL</h2>
 		<hr class="rule" />
 		<p class="perfil">
-			Como project leader y desarrollador de software trabajo en aplicaciones web y APIs, planeándolas desde cero
-			y garantizando un mantenimiento eficiente. Entre habilidades técnicas y gestión de equipos, siempre me
-			enfoco en crear soluciones prácticas, mantenibles y que realmente cumplan con las necesidades del usuario.
+			Project Manager, project leader y desarrollador full stack. Lidero equipos y proyectos institucionales en la
+			Universidad Católica de Córdoba y, de forma freelance, diseño y desarrollo de punta a punta productos web que
+			hoy están en producción, con integraciones de pagos, WhatsApp e IA. Entre habilidades técnicas y gestión de
+			equipos, me enfoco en crear soluciones prácticas, mantenibles y que realmente cumplan con las necesidades del usuario.
 		</p>
 	</section>
 
@@ -138,16 +153,43 @@
 
 		<div class="entry">
 			<div class="entry-head">
-				<div>
-					<div class="entry-title">Project leader - Software developer</div>
-					<div class="entry-org">(Universidad Católica de Córdoba)</div>
-				</div>
+				<div class="entry-org">Universidad Católica de Córdoba</div>
 				<div class="entry-date">Nov 2023 - Presente</div>
 			</div>
+			<div class="role">
+				<div class="role-head"><span>Project Manager - Project leader</span><span>Sep 2026 - Presente</span></div>
+				<ul>
+					<li><strong>PM de la app mobile institucional</strong> (Flutter, Go): roadmap, prioridades y coordinación de áreas y plazos.</li>
+					<li><strong>Referente del proyecto core de contabilidad:</strong> lidero, organizo, programo y coordino los tiempos.</li>
+				</ul>
+			</div>
+			<div class="role">
+				<div class="role-head"><span>Project leader - Software developer</span><span>Ene 2025 - Presente</span></div>
+				<ul>
+					<li>Referente del sistema de gestión de insumos y servicios: lidero un equipo de devs y testers.</li>
+				</ul>
+			</div>
+			<div class="role">
+				<div class="role-head"><span>Software developer</span><span>Nov 2023 - Ene 2025</span></div>
+				<ul>
+					<li>Desarrollo full stack (Angular, React, Node, PostgreSQL, PHP, Laravel, AWS) con metodología Scrum y Jira.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="entry">
+			<div class="entry-head">
+				<div>
+					<div class="entry-title">Full stack developer freelance</div>
+					<div class="entry-org">(Proyectos propios para clientes)</div>
+				</div>
+				<div class="entry-date">2024 - Presente</div>
+			</div>
 			<ul>
-				<li>Liderazgo de equipos de programadores.</li>
-				<li>Planeamiento y organización de tareas.</li>
-				<li>Desarrollo de software con labores full stack (Angular, Node, PostgreSQL, PHP, Laravel, AWS).</li>
+				<li><strong>Gestión financiera con asistente de WhatsApp</strong> (Angular, NestJS, Prisma, MySQL), en producción: finanzas multimoneda, préstamos con interés diario y carga por texto, voz o foto interpretada con IA.</li>
+				<li><strong>Car Place</strong> (React, Node, Express, MariaDB), en producción: sitio y CRM para agencia de autos, con comandos de voz (Whisper + GPT) y CI/CD.</li>
+				<li><strong>Los Matis</strong> (NestJS, TypeORM, MySQL), en desarrollo: API de e-commerce con Mercado Pago, puntos y gift cards; ~600 tests en Bruno.</li>
+				<li><strong>Boscatto Estudio</strong> (turnos online) y <strong>SportQuatro</strong> (CRM de concesionaria con WhatsApp en tiempo real).</li>
 			</ul>
 		</div>
 
@@ -160,8 +202,7 @@
 				<div class="entry-date">Jul 2024 - 2025</div>
 			</div>
 			<ul>
-				<li>Gestión y organización de clases para programación web full stack (React, Node, Bootstrap).</li>
-				<li>Desarrollo de actividades relacionadas al contenido del bootcamp.</li>
+				<li>Gestión y organización de clases y actividades de programación web full stack (React, Node, Bootstrap).</li>
 			</ul>
 		</div>
 
@@ -184,7 +225,8 @@
 		<hr class="rule" />
 		<ul class="stack">
 			<li><strong>Lenguajes &amp; Frameworks:</strong> Node.js, Angular, React, Express.js, NestJS, Socket.io, TypeScript, PHP, Laravel.</li>
-			<li><strong>Bases de Datos &amp; Herramientas:</strong> PostgreSQL, MySQL, SQL, Sequelize, Prisma, Docker, AWS, Jira.</li>
+			<li><strong>Bases de Datos &amp; Herramientas:</strong> PostgreSQL, MySQL, MariaDB, Prisma, Sequelize, TypeORM, Docker, AWS, Jira.</li>
+			<li><strong>Integraciones:</strong> WhatsApp Business API, OpenAI (GPT, Whisper), Mercado Pago, passkeys, webhooks.</li>
 		</ul>
 	</section>
 
@@ -193,33 +235,24 @@
 		<hr class="rule" />
 		<div class="edu-entry">
 			<div class="edu-head">
-				<div class="edu-title">Universidad Tecnológica Nacional (FRC)</div>
+				<div><span class="edu-title">Universidad Tecnológica Nacional (FRC)</span> - Ingeniería en sistemas de información</div>
 				<div>2023 - 2024</div>
 			</div>
-			<div class="edu-degree">Ingeniería en sistemas de información</div>
 		</div>
 		<div class="edu-entry">
 			<div class="edu-head">
-				<div class="edu-title">Universidad Tecnológica Nacional (FRC)</div>
+				<div><span class="edu-title">Universidad Tecnológica Nacional (FRC)</span> - Ingeniería electrónica</div>
 				<div>2020 - 2022</div>
 			</div>
-			<div class="edu-degree">Ingeniería electrónica</div>
 		</div>
 	</section>
 
-	<section>
-		<h2>CERTIFICACIONES Y COMPETENCIAS</h2>
+	<section style="margin-bottom: 0;">
+		<h2>CERTIFICACIONES E IDIOMAS</h2>
 		<hr class="rule" />
 		<ul>
 			<li>Desarrollo Web, Argentina Programa - 2023</li>
 			<li>Full Stack Web Developer, Soy Henry bootcamp - 2022</li>
-		</ul>
-	</section>
-
-	<section style="margin-bottom: 0;">
-		<h2>INFORMACIÓN ADICIONAL</h2>
-		<hr class="rule" />
-		<ul>
 			<li>Inglés: B1 EF SET CERTIFICATE.</li>
 		</ul>
 	</section>
